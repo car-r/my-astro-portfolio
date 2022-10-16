@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import PortfolioLink from "../components/PortfolioLink.astro";
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
@@ -207,7 +208,7 @@ import SideBar from "../components/SideBar.astro";
                     <div class="">
                         <img src={'./assets/codingcarson.jpg'}  class=" object-cover max-h-48 w-full"/>
                     </div>
-                    <div class="flex mx-auto py-5 justify-between px-10 lg:px-20 items-center max-w-5xl">
+                    <div class="flex mx-auto pt-5 pb-2 justify-between px-10 lg:px-20 items-center max-w-5xl">
                         <div class="flex gap-6 ">
                             <img src={'./assets/headshot.png'} alt="" class="h-16 w-16 rounded-full">
                             <div class="w-full">
@@ -219,6 +220,13 @@ import SideBar from "../components/SideBar.astro";
                             <div class="uppercase text-sm font-semibold tracking-wider px-4 py-2 text-neutral-400 bg-neutral-600">Connect</div>
                         </div>
                         
+                    </div>
+                    <div class="flex mx-auto py-5 px-10 lg:px-20 items-center max-w-5xl">
+                        <PortfolioLink href="/about">
+                            <div class="text-neutral-200">
+                                <p class="uppercase">about</p>
+                            </div>
+                        </PortfolioLink>
                     </div>
                 </header>
                 <main >

@@ -1,77 +1,239 @@
 ---
-import MainHead from '../components/MainHead.astro';
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro';
+import Footer from "../components/Footer.astro";
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
+import PortfolioLink from "../components/PortfolioLink.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import SideBar from "../components/SideBar.astro";
+
 ---
 
 <html lang="en">
 	<head>
-		<MainHead title="About | Jeanine White" description="About Jeanine White Lorem Ipsum" />
-		<style>
-			.heroImg {
-				max-height: 24rem;
-				object-fit: cover;
+		<MainHead
+			title="Personal Portfolio"
+			description="Carson: Developer, Tennis player, and husband..."
+		/>
+		<!-- <style>
+			.wrapper {
+				margin-top: 2em;
+				margin-bottom: 2em;
+			}
+
+			.hero {
+				position: relative;
 				overflow: hidden;
 			}
 
-			.heroImg img {
+			@media (min-width: 750px) {
+				.hero {
+					height: 45vw;
+				}
+			}
+
+			.img {
+				display: block;
 				width: 100%;
+				height: auto;
+			}
+
+			.gradient,
+			.gradient2 {
+				background-image: url('/assets/mesh-gradient.jpg');
+				background-size: cover;
+				pointer-events: none;
+				mix-blend-mode: screen;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+
+			.gradient2 {
+				mix-blend-mode: multiply;
+				background-size: cover;
+			}
+
+			.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: center;
+				padding-left: 2rem;
+			}
+
+			@media (min-width: 750px) {
+				.overlay {
+					padding-left: 4rem;
+				}
+			}
+
+			.title {
+				font-weight: 900;
+				font-size: var(--f-u6);
+				margin-bottom: 0.5rem;
+				margin-top: 0;
+			}
+
+			@media (min-width: 750px) {
+				.title {
+					font-size: var(--f-u12);
+				}
+			}
+
+			.grid {
+				display: grid;
+				grid-gap: 2rem;
+			}
+
+			@media (min-width: 1200px) {
+				.grid {
+					grid-template-columns: 2fr 1fr;
+				}
+			}
+
+			.sectionTitle {
+				font-weight: 700;
+				font-size: var(--f-u8);
+				margin-top: 4rem;
+				margin-bottom: 2rem;
+			}
+
+			.roles {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+				font-size: var(--f-d1);
+			}
+
+			.role {
+				position: relative;
+				display: inline-block;
+				white-space: nowrap;
+				font-weight: 900;
+				color: var(--t-bg);
+				background-color: var(--t-fg);
+				padding: 0.25em 0.5em;
+				z-index: 2;
+			}
+
+			@media (min-width: 750px) {
+				.role {
+					font-size: var(--f-u3);
+				}
+			}
+
+			.role:nth-of-type(1) .invert {
+				background-color: var(--c-pink);
+			}
+
+			.role:nth-of-type(2) .invert {
+				background-color: var(--c-blue);
+			}
+
+			.role:nth-of-type(3) .invert {
+				background-color: var(--c-green);
+			}
+
+			.role:hover .invert {
+				clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+			}
+
+			.invert {
+				position: absolute;
+				color: var(--t-fg);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
+				transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+			}
+
+			.desc {
+				font-size: var(--f-u1);
+				margin-top: 1.5rem;
+				margin-bottom: 0;
+			}
+
+			.subtitle {
+				display: block;
+				font-weight: 400;
+				font-size: var(--f-d6);
+				letter-spacing: -0.0625em;
 			}
 
 			.bio {
-				font-size: var(--f-u1);
 				line-height: 2;
-				margin-top: 4em;
+				margin-bottom: 2rem;
 			}
 
-			.wrapper.bio {
-				max-width: 50em;
+			.bio > span:first-of-type {
+				line-height: 1;
+				margin-bottom: 0.5em;
+				display: block;
+				font-weight: 700;
+				font-size: var(--f-u4);
 			}
-		</style>
+
+			.buttonContainer {
+				text-align: center;
+				margin-top: 2em;
+			}
+		</style> -->
 	</head>
-	<body>
+	<body class="flex flex-col bg-neutral-900">
 		<Nav />
-		<div class="wrapper">
-			<h1>About Jeanine</h1>
-			<div class="heroImg">
-				<img
-					width="1400"
-					height="350"
-					src="https://images.unsplash.com/photo-1581977012607-4091712d36f9?auto=format&fit=crop&w=1400&h=350&q=75"
-				/>
-			</div>
-			<div class="bio wrapper">
-				<p>
-					Cream cheese say cheese stinking bishop. Brie fondue hard cheese bocconcini feta camembert
-					de normandie babybel airedale. Red leicester swiss manchego mascarpone pepper jack
-					airedale fromage frais ricotta. Cheese and biscuits cauliflower cheese boursin.
-				</p>
-				<p>
-					Pepper jack cheesy feet cheese slices. Halloumi port-salut queso caerphilly roquefort
-					cheese slices cheesy feet rubber cheese. Cheese slices smelly cheese pecorino macaroni
-					cheese feta blue castello roquefort edam. Babybel pepper jack airedale cheddar fromage
-					frais manchego.
-				</p>
-				<p>
-					Cauliflower cheese lancashire macaroni cheese. Cheeseburger babybel cheese on toast
-					airedale cauliflower cheese who moved my cheese roquefort paneer. Stinking bishop cheddar
-					taleggio port-salut port-salut stinking bishop cheesy grin babybel. Blue castello feta
-					everyone loves brie.
-				</p>
-				<p>
-					Goat squirty cheese cut the cheese. Cheese and wine cheddar fondue airedale cottage cheese
-					camembert de normandie feta babybel. Rubber cheese melted cheese pecorino port-salut
-					fondue gouda cheese on toast cheesy feet. Feta edam everyone loves cheese strings
-					camembert de normandie.
-				</p>
-				<p>
-					Caerphilly monterey jack goat. Squirty cheese cheesy grin hard cheese cheese strings
-					cheese and biscuits croque monsieur smelly cheese danish fontina. Swiss cheese triangles
-					everyone loves mascarpone cheese on toast who moved my cheese lancashire cheeseburger.
-					Fromage frais fromage frais cheese and biscuits stinking bishop cauliflower cheese.
-				</p>
-			</div>
-		</div>
-		<Footer />
+        <div class="flex w-full h-full">
+            <SideBar />
+            <div class="flex flex-col w-full ml-60">
+                <!-- <header style={`background-image:url('/assets/codingcarson.jpg')`} class="h-56 bg-cover">
+                    
+                </header> -->
+                <header class="w-full bg-neutral-800/90">
+                    <!-- Banner image -->
+                    
+                    <div class="">
+                        <img src={'./assets/codingcarson.jpg'}  class=" object-cover max-h-48 w-full"/>
+                    </div>
+                    <div class="flex mx-auto pt-5 pb-2 justify-between px-10 lg:px-20 items-center max-w-5xl">
+                        <div class="flex gap-6 ">
+                            <img src={'./assets/headshot.png'} alt="" class="h-16 w-16 rounded-full">
+                            <div class="w-full">
+                                <h1 class="text-xl lg:text-2xl text-neutral-200">Coding Carson</h1>
+                                <p class="text-neutral-400">10 projects</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uppercase text-sm font-semibold tracking-wider px-4 py-2 text-neutral-400 bg-neutral-600">Connect</div>
+                        </div>
+                    </div>
+                    <div class="flex mx-auto px-10 lg:px-20 items-center max-w-5xl">
+                        <PortfolioLink href="/about">
+                            <div class="text-neutral-200 py-3 px-8 active:border-b-2 ">
+                                <p class="uppercase">about</p>
+                            </div>
+                        </PortfolioLink>
+                    </div>
+                </header>
+                <main >
+                    <h1>ABOUT</h1>
+                </main>
+                <Footer />
+            </div>
+            
+        </div>
 	</body>
 </html>
